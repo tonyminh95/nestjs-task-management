@@ -17,7 +17,7 @@ export class TaskRepository extends Repository<Task> {
     ): Promise<Task[]> {
         const query = this.createQueryBuilder('task');
 
-        query.where('task.sadadsdsdasads = :userId', { userId: user.id })
+        query.where('task.userId = :userId', { userId: user.id })
 
         if (status) {
             query.andWhere('task.status = :status', { status })
